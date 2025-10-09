@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import os
 
 # === 1. Загрузка данных ===
-data_path = os.path.join("data", "expenses.csv")
+data_path = os.path.join("data", "expenses_example.csv")
 df = pd.read_csv(data_path)
 
 print("✅ Данные успешно загружены!")
