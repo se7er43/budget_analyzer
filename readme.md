@@ -44,7 +44,6 @@ budget-analyzer/
 2. Запустить анализ:
    ```bash
    python budget_analyzer.py
-
  
 3. Результаты: 
    На экране появится статистика и график. Отчёт сохранится в output/report.csv.
