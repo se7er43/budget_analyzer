@@ -42,6 +42,7 @@ budget-analyzer/
    pip install pandas matplotlib
 
 2. Запустить анализ:
+   ```bash
    python budget_analyzer.py
 
  
