@@ -20,6 +20,7 @@
 
 ---
 
+```markdown
 ## 🧩 Структура проекта
 
 budget-analyzer/
@@ -33,6 +34,7 @@ budget-analyzer/
 ├── budget_analyzer.py
 │
 └── README.md
+```markdown
 
 ---
 
