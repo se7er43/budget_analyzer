@@ -1,6 +1,4 @@
-# budget_analyzer.py
-# -------------------
-# Простая программа для анализа личных расходов
+# budget_analyzer.py - Это простая программа для анализа личных расходов
 # Pandas для анализа CSV-файла и matplotlib для визуализации
 
 import pandas as pd
@@ -11,29 +9,28 @@ import os
 data_path = os.path.join("data", "expenses_example.csv")
 df = pd.read_csv(data_path)
 
-print("✅ Данные успешно загружены!")
 print(df.head(), "\n")
 
 # Преобразуем колонку 'date' в формат даты
 df["date"] = pd.to_datetime(df["date"], errors="coerce")
 
 # Основная аналитика
-print("=== Общая статистика ===")
+print("Общая статистика")
 total = df["amount"].sum()
 mean = df["amount"].mean()
 
-print(f"💰 Всего потрачено: {total:.2f} руб.")
-print(f"📊 Средний расход: {mean:.2f} руб.\n")
+print(f"Всего потрачено: {total:.2f} руб.")
+print(f"Средний расход: {mean:.2f} руб.\n")
 
 # Анализ по категориям
 category_summary = df.groupby("category")["amount"].sum().sort_values(ascending=False)
-print("=== Траты по категориям ===")
+print("Траты по категориям")
 print(category_summary, "\n")
 
 # Сохраняем отчёт в CSV
 os.makedirs("output", exist_ok=True)
 category_summary.to_csv("output/report.csv", header=["total_spent"])
-print("📁 Отчёт сохранён в output/report.csv\n")
+print("Отчёт сохранён в output/report.csv\n")
 
 # Строим график
 plt.figure(figsize=(8, 5))
